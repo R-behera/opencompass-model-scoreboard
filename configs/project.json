@@ -1,0 +1,114 @@
+{
+  "slug": "opencompass-model-scoreboard",
+  "title": "OpenCompass Model Scoreboard",
+  "project_type": "llm",
+  "domain": "Large-Scale Model Benchmarking",
+  "summary": "Create a model scoreboard that packages benchmark breadth, quality regression alerts, and deployment-readiness summaries.",
+  "tags": [
+    "opencompass",
+    "benchmarks",
+    "llm",
+    "evaluation"
+  ],
+  "accent": "#2e2cc8",
+  "secondary_accent": "#a92c5e",
+  "dashboard_metrics": [
+    {
+      "label": "Resolution Rate",
+      "value": "70%",
+      "delta": "+5.8%"
+    },
+    {
+      "label": "Answer Quality",
+      "value": "85%",
+      "delta": "+2.2%"
+    },
+    {
+      "label": "Ops Time Saved",
+      "value": "17h",
+      "delta": "+3h"
+    }
+  ],
+  "sample_features": {
+    "query": "Summarize the highest priority risk and recommended next step.",
+    "audience": "analytics"
+  },
+  "sample_metrics": {
+    "acquisition": 57.7,
+    "activation": 52.5,
+    "retention": 62.4,
+    "revenue": 106.9
+  },
+  "knowledge_base": [
+    "OpenCompass Model Scoreboard is positioned as a Large-Scale Model Benchmarking starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.",
+    "The primary value proposition is: Create a model scoreboard that packages benchmark breadth, quality regression alerts, and deployment-readiness summaries.",
+    "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.",
+    "Typical stakeholders include analytics, operations, product, and leadership teams working on opencompass, benchmarks, llm, evaluation.",
+    "Source paper: OpenCompass",
+    "Official repo: https://github.com/open-compass/opencompass",
+    "Production differentiation focus: Wrap the upstream large-scale model benchmarking capability in a reviewable operator workflow instead of a single demo script.; Surface latency, quality, and execution traces so the system feels deployment-ready rather than experimental.; Design a distinct UI and reporting layer that makes the project portfolio-friendly and easier to explain."
+  ],
+  "research_key": "opencompass-model-scoreboard",
+  "research_score": 9.645,
+  "paper_title": "OpenCompass",
+  "paper_url": "https://github.com/open-compass/opencompass",
+  "repo_url": "https://github.com/open-compass/opencompass",
+  "repo_org": "open-compass",
+  "why_high_score": [
+    "Official or primary upstream repo with 6878 GitHub stars.",
+    "Active maintenance signal with recent push at 2026-04-14T10:59:08Z.",
+    "OpenCompass is an LLM evaluation platform, supporting a wide range of models (Llama3, Mistral, InternLM2,GPT-4,LLaMa2, Qwen,GLM, Claude, etc) over 100+ datasets."
+  ],
+  "differentiation_hooks": [
+    "Wrap the upstream large-scale model benchmarking capability in a reviewable operator workflow instead of a single demo script.",
+    "Surface latency, quality, and execution traces so the system feels deployment-ready rather than experimental.",
+    "Design a distinct UI and reporting layer that makes the project portfolio-friendly and easier to explain."
+  ],
+  "app_archetype": "copilot",
+  "ui_profile": {
+    "layout": "rail",
+    "surface": "mist",
+    "font_stack": "\"Manrope\", \"Segoe UI\", sans-serif",
+    "radius": 21,
+    "shadow": 43,
+    "eyebrow_style": "outline",
+    "module_columns": 3,
+    "hero_align": "left",
+    "headline_mode": "compact"
+  },
+  "app_modules": [
+    {
+      "label": "Workflow 01",
+      "title": "Routing Simulator",
+      "description": "Preview how a request gets prioritized or routed through the workflow.",
+      "endpoint": "/score",
+      "input_mode": "json",
+      "cta": "Simulate Route",
+      "prefill": "{\n  \"features\": {\n    \"query\": \"Summarize the highest priority risk and recommended next step.\",\n    \"audience\": \"analytics\"\n  }\n}",
+      "hint": "Routing score and top signals will appear here.",
+      "span": "normal"
+    },
+    {
+      "label": "Workflow 02",
+      "title": "Operator Brief",
+      "description": "Generate a concise recommended action set for the current workflow state.",
+      "endpoint": "/recommend",
+      "input_mode": "json",
+      "cta": "Generate Brief",
+      "prefill": "{\n  \"prompt\": \"Recommend the next best action for OpenCompass Model Scoreboard.\",\n  \"features\": {\n    \"query\": \"Summarize the highest priority risk and recommended next step.\",\n    \"audience\": \"analytics\"\n  },\n  \"metrics\": {\n    \"acquisition\": 57.7,\n    \"activation\": 52.5,\n    \"retention\": 62.4,\n    \"revenue\": 106.9\n  }\n}",
+      "hint": "Operator brief and recommended actions will appear here.",
+      "span": "wide"
+    },
+    {
+      "label": "Workflow 03",
+      "title": "Grounded Prompt",
+      "description": "Ask a targeted question and inspect the support context behind the answer.",
+      "endpoint": "/query",
+      "input_mode": "text",
+      "cta": "Run Prompt",
+      "prefill": "What is the top priority recommendation for OpenCompass Model Scoreboard?",
+      "hint": "Grounded answer and context excerpts will appear here.",
+      "span": "normal"
+    }
+  ]
+}

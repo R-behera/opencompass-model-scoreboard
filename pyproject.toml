@@ -1,0 +1,15 @@
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opencompass-model-scoreboard"
+version = "0.1.0"
+description = "Create a model scoreboard that packages benchmark breadth, quality regression alerts, and deployment-readiness summaries."
+readme = "README.md"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

@@ -1,0 +1,95 @@
+
+        <!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>OpenCompass Model Scoreboard</title>
+          <link rel="stylesheet" href="./styles.css">
+        </head>
+        <body class="surface-mist">
+          <div class="page layout-rail eyebrow-outline headline-compact modules-3 hero-align-left">
+            <section class="hero">
+              <div class="panel hero-copy">
+                <span class="eyebrow" data-health>Workflow Copilot</span>
+                <h1 id="project-title">OpenCompass Model Scoreboard</h1>
+                <p id="project-summary" class="lead">Create a model scoreboard that packages benchmark breadth, quality regression alerts, and deployment-readiness summaries.</p>
+                <ul id="project-tags" class="tag-list">
+                  <li>opencompass</li><li>benchmarks</li><li>llm</li><li>evaluation</li>
+                </ul>
+              </div>
+              <div class="panel hero-side">
+                <div class="metric-grid">
+                  <article class='card'><span>Resolution Rate</span><strong>70%</strong><em>+5.8%</em></article>
+<article class='card'><span>Answer Quality</span><strong>85%</strong><em>+2.2%</em></article>
+<article class='card'><span>Ops Time Saved</span><strong>17h</strong><em>+3h</em></article>
+                </div>
+                <div class="mini-grid">
+                  <article class='mini-card'><span>Project Type</span><strong>LLM</strong></article><article class='mini-card'><span>Domain</span><strong>Large-Scale Model Benchmarking</strong></article><article class='mini-card'><span>Application</span><strong>Workflow Copilot</strong></article><article class='mini-card'><span>Deployment</span><strong>Docker + CI</strong></article>
+                </div>
+              </div>
+            </section>
+            <section class="app-grid">
+              <article class="panel module js-module span-normal">
+          <div class="module-header">
+            <span>Workflow 01</span>
+            <h2>Routing Simulator</h2>
+            <p>Preview how a request gets prioritized or routed through the workflow.</p>
+          </div>
+          <textarea class="js-input">{
+  &quot;features&quot;: {
+    &quot;query&quot;: &quot;Summarize the highest priority risk and recommended next step.&quot;,
+    &quot;audience&quot;: &quot;analytics&quot;
+  }
+}</textarea>
+          <div class="button-row">
+            <button class="js-run" data-endpoint="/score" data-input-mode="json">Simulate Route</button>
+          </div>
+          <pre class="js-output">Routing score and top signals will appear here.</pre>
+        </article>
+<article class="panel module js-module span-wide">
+          <div class="module-header">
+            <span>Workflow 02</span>
+            <h2>Operator Brief</h2>
+            <p>Generate a concise recommended action set for the current workflow state.</p>
+          </div>
+          <textarea class="js-input">{
+  &quot;prompt&quot;: &quot;Recommend the next best action for OpenCompass Model Scoreboard.&quot;,
+  &quot;features&quot;: {
+    &quot;query&quot;: &quot;Summarize the highest priority risk and recommended next step.&quot;,
+    &quot;audience&quot;: &quot;analytics&quot;
+  },
+  &quot;metrics&quot;: {
+    &quot;acquisition&quot;: 57.7,
+    &quot;activation&quot;: 52.5,
+    &quot;retention&quot;: 62.4,
+    &quot;revenue&quot;: 106.9
+  }
+}</textarea>
+          <div class="button-row">
+            <button class="js-run" data-endpoint="/recommend" data-input-mode="json">Generate Brief</button>
+          </div>
+          <pre class="js-output">Operator brief and recommended actions will appear here.</pre>
+        </article>
+<article class="panel module js-module span-normal">
+  <div class="module-header">
+    <span>Workflow 03</span>
+    <h2>Grounded Prompt</h2>
+    <p>Ask a targeted question and inspect the support context behind the answer.</p>
+  </div>
+  <textarea class="js-input module-input-text">What is the top priority recommendation for OpenCompass Model Scoreboard?</textarea>
+  <div class="button-row">
+    <button class="js-run" data-endpoint="/query" data-input-mode="text">Run Prompt</button>
+  </div>
+  <pre class="js-output">Grounded answer and context excerpts will appear here.</pre>
+</article>
+            </section>
+            <footer class="footer">
+              <span>Large-Scale Model Benchmarking • LLM • Workflow Copilot</span>
+              <span>opencompass-model-scoreboard</span>
+            </footer>
+          </div>
+          <script id="bootstrap-data" type="application/json">{"project": {"slug": "opencompass-model-scoreboard", "title": "OpenCompass Model Scoreboard", "project_type": "llm", "domain": "Large-Scale Model Benchmarking", "summary": "Create a model scoreboard that packages benchmark breadth, quality regression alerts, and deployment-readiness summaries.", "tags": ["opencompass", "benchmarks", "llm", "evaluation"]}, "app_archetype": "copilot", "ui_profile": {"layout": "rail", "surface": "mist", "font_stack": "\"Manrope\", \"Segoe UI\", sans-serif", "radius": 21, "shadow": 43, "eyebrow_style": "outline", "module_columns": 3, "hero_align": "left", "headline_mode": "compact"}, "app_modules": [{"label": "Workflow 01", "title": "Routing Simulator", "description": "Preview how a request gets prioritized or routed through the workflow.", "endpoint": "/score", "input_mode": "json", "cta": "Simulate Route", "prefill": "{\n  \"features\": {\n    \"query\": \"Summarize the highest priority risk and recommended next step.\",\n    \"audience\": \"analytics\"\n  }\n}", "hint": "Routing score and top signals will appear here.", "span": "normal"}, {"label": "Workflow 02", "title": "Operator Brief", "description": "Generate a concise recommended action set for the current workflow state.", "endpoint": "/recommend", "input_mode": "json", "cta": "Generate Brief", "prefill": "{\n  \"prompt\": \"Recommend the next best action for OpenCompass Model Scoreboard.\",\n  \"features\": {\n    \"query\": \"Summarize the highest priority risk and recommended next step.\",\n    \"audience\": \"analytics\"\n  },\n  \"metrics\": {\n    \"acquisition\": 57.7,\n    \"activation\": 52.5,\n    \"retention\": 62.4,\n    \"revenue\": 106.9\n  }\n}", "hint": "Operator brief and recommended actions will appear here.", "span": "wide"}, {"label": "Workflow 03", "title": "Grounded Prompt", "description": "Ask a targeted question and inspect the support context behind the answer.", "endpoint": "/query", "input_mode": "text", "cta": "Run Prompt", "prefill": "What is the top priority recommendation for OpenCompass Model Scoreboard?", "hint": "Grounded answer and context excerpts will appear here.", "span": "normal"}], "sample_features": {"query": "Summarize the highest priority risk and recommended next step.", "audience": "analytics"}, "sample_metrics": {"acquisition": 57.7, "activation": 52.5, "retention": 62.4, "revenue": 106.9}, "knowledge_base": ["OpenCompass Model Scoreboard is positioned as a Large-Scale Model Benchmarking starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.", "The primary value proposition is: Create a model scoreboard that packages benchmark breadth, quality regression alerts, and deployment-readiness summaries.", "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.", "Typical stakeholders include analytics, operations, product, and leadership teams working on opencompass, benchmarks, llm, evaluation.", "Source paper: OpenCompass", "Official repo: https://github.com/open-compass/opencompass", "Production differentiation focus: Wrap the upstream large-scale model benchmarking capability in a reviewable operator workflow instead of a single demo script.; Surface latency, quality, and execution traces so the system feels deployment-ready rather than experimental.; Design a distinct UI and reporting layer that makes the project portfolio-friendly and easier to explain."], "dashboard_metrics": [{"label": "Resolution Rate", "value": "70%", "delta": "+5.8%"}, {"label": "Answer Quality", "value": "85%", "delta": "+2.2%"}, {"label": "Ops Time Saved", "value": "17h", "delta": "+3h"}]}</script>
+          <script src="./app.js"></script>
+        </body>
+        </html>
