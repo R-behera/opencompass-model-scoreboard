@@ -1,68 +1,52 @@
 {
   "slug": "opencompass-model-scoreboard",
-  "title": "OpenCompass Model Scoreboard",
+  "title": "Enterprise Model Selection Board",
   "project_type": "llm",
-  "domain": "Large-Scale Model Benchmarking",
-  "summary": "Create a model scoreboard that packages benchmark breadth, quality regression alerts, and deployment-readiness summaries.",
+  "domain": "AI Procurement and Benchmarking",
+  "summary": "Rank candidate models across cost, latency, safety, and task performance for enterprise deployment committees.",
   "tags": [
-    "opencompass",
-    "benchmarks",
+    "benchmarking",
+    "procurement",
     "llm",
-    "evaluation"
+    "enterprise"
   ],
   "accent": "#2e2cc8",
   "secondary_accent": "#a92c5e",
   "dashboard_metrics": [
     {
-      "label": "Resolution Rate",
-      "value": "70%",
-      "delta": "+5.8%"
+      "label": "Task Quality",
+      "value": "84%",
+      "delta": "+5.0%"
     },
     {
-      "label": "Answer Quality",
-      "value": "85%",
-      "delta": "+2.2%"
+      "label": "Latency Fit",
+      "value": "90%",
+      "delta": "+3.2%"
     },
     {
-      "label": "Ops Time Saved",
-      "value": "17h",
-      "delta": "+3h"
+      "label": "Selection Cycle",
+      "value": "4d",
+      "delta": "-1.1d"
     }
   ],
   "sample_features": {
-    "query": "Summarize the highest priority risk and recommended next step.",
-    "audience": "analytics"
+    "model_name": "candidate-model-a",
+    "task_family": "knowledge_chat",
+    "monthly_requests_m": 8.5,
+    "latency_budget_ms": 1500,
+    "safety_tier": "strict"
   },
   "sample_metrics": {
-    "acquisition": 57.7,
-    "activation": 52.5,
-    "retention": 62.4,
-    "revenue": 106.9
+    "task_quality": 0.84,
+    "latency_fit": 0.9,
+    "unit_cost_score": 0.73,
+    "selection_cycle_days": 4.0
   },
   "knowledge_base": [
-    "OpenCompass Model Scoreboard is positioned as a Large-Scale Model Benchmarking starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.",
-    "The primary value proposition is: Create a model scoreboard that packages benchmark breadth, quality regression alerts, and deployment-readiness summaries.",
-    "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.",
-    "Typical stakeholders include analytics, operations, product, and leadership teams working on opencompass, benchmarks, llm, evaluation.",
-    "Source paper: OpenCompass",
-    "Official repo: https://github.com/open-compass/opencompass",
-    "Production differentiation focus: Wrap the upstream large-scale model benchmarking capability in a reviewable operator workflow instead of a single demo script.; Surface latency, quality, and execution traces so the system feels deployment-ready rather than experimental.; Design a distinct UI and reporting layer that makes the project portfolio-friendly and easier to explain."
-  ],
-  "research_key": "opencompass-model-scoreboard",
-  "research_score": 9.645,
-  "paper_title": "OpenCompass",
-  "paper_url": "https://github.com/open-compass/opencompass",
-  "repo_url": "https://github.com/open-compass/opencompass",
-  "repo_org": "open-compass",
-  "why_high_score": [
-    "Official or primary upstream repo with 6878 GitHub stars.",
-    "Active maintenance signal with recent push at 2026-04-14T10:59:08Z.",
-    "OpenCompass is an LLM evaluation platform, supporting a wide range of models (Llama3, Mistral, InternLM2,GPT-4,LLaMa2, Qwen,GLM, Claude, etc) over 100+ datasets."
-  ],
-  "differentiation_hooks": [
-    "Wrap the upstream large-scale model benchmarking capability in a reviewable operator workflow instead of a single demo script.",
-    "Surface latency, quality, and execution traces so the system feels deployment-ready rather than experimental.",
-    "Design a distinct UI and reporting layer that makes the project portfolio-friendly and easier to explain."
+    "User: enterprise architecture teams selecting a production model.",
+    "Primary pain: no shared, decision-ready tradeoff view across quality, latency, cost, and safety.",
+    "Decision output: ranked shortlist with deployment recommendation.",
+    "Business impact: faster model choices and fewer expensive reversals."
   ],
   "app_archetype": "copilot",
   "ui_profile": {
@@ -78,36 +62,36 @@
   },
   "app_modules": [
     {
-      "label": "Workflow 01",
-      "title": "Routing Simulator",
-      "description": "Preview how a request gets prioritized or routed through the workflow.",
+      "label": "Board 01",
+      "title": "Candidate Score",
+      "description": "Score a candidate model against enterprise deployment constraints.",
       "endpoint": "/score",
       "input_mode": "json",
-      "cta": "Simulate Route",
-      "prefill": "{\n  \"features\": {\n    \"query\": \"Summarize the highest priority risk and recommended next step.\",\n    \"audience\": \"analytics\"\n  }\n}",
-      "hint": "Routing score and top signals will appear here.",
+      "cta": "Score Model",
+      "prefill": "{\n  \"features\": {\n    \"model_name\": \"candidate-model-a\",\n    \"task_family\": \"knowledge_chat\",\n    \"monthly_requests_m\": 8.5,\n    \"latency_budget_ms\": 1500\n  }\n}",
+      "hint": "Model fit score appears here.",
       "span": "normal"
     },
     {
-      "label": "Workflow 02",
-      "title": "Operator Brief",
-      "description": "Generate a concise recommended action set for the current workflow state.",
-      "endpoint": "/recommend",
+      "label": "Board 02",
+      "title": "Tradeoff Review",
+      "description": "Compare the candidate model against the current enterprise default.",
+      "endpoint": "/analyze",
       "input_mode": "json",
-      "cta": "Generate Brief",
-      "prefill": "{\n  \"prompt\": \"Recommend the next best action for OpenCompass Model Scoreboard.\",\n  \"features\": {\n    \"query\": \"Summarize the highest priority risk and recommended next step.\",\n    \"audience\": \"analytics\"\n  },\n  \"metrics\": {\n    \"acquisition\": 57.7,\n    \"activation\": 52.5,\n    \"retention\": 62.4,\n    \"revenue\": 106.9\n  }\n}",
-      "hint": "Operator brief and recommended actions will appear here.",
+      "cta": "Compare Models",
+      "prefill": "{\n  \"metrics\": {\n    \"task_quality\": 84.0,\n    \"latency_fit\": 90.0,\n    \"unit_cost_score\": 73.0\n  },\n  \"baseline\": {\n    \"task_quality\": 79.0,\n    \"latency_fit\": 87.0,\n    \"unit_cost_score\": 78.0\n  }\n}",
+      "hint": "Tradeoff summary appears here.",
       "span": "wide"
     },
     {
-      "label": "Workflow 03",
-      "title": "Grounded Prompt",
-      "description": "Ask a targeted question and inspect the support context behind the answer.",
-      "endpoint": "/query",
-      "input_mode": "text",
-      "cta": "Run Prompt",
-      "prefill": "What is the top priority recommendation for OpenCompass Model Scoreboard?",
-      "hint": "Grounded answer and context excerpts will appear here.",
+      "label": "Board 03",
+      "title": "Selection Brief",
+      "description": "Create the recommendation packet for the model selection committee.",
+      "endpoint": "/recommend",
+      "input_mode": "json",
+      "cta": "Draft Brief",
+      "prefill": "{\n  \"prompt\": \"Recommend whether this model should replace the current enterprise default.\",\n  \"features\": {\n    \"model_name\": \"candidate-model-a\",\n    \"safety_tier\": \"strict\"\n  },\n  \"metrics\": {\n    \"task_quality\": 0.84,\n    \"unit_cost_score\": 0.73\n  }\n}",
+      "hint": "Selection brief appears here.",
       "span": "normal"
     }
   ]

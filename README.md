@@ -1,19 +1,37 @@
-
-# OpenCompass Model Scoreboard
+# Enterprise Model Selection Board
 
 ![Demo Screenshot](demo/screenshot.png)
 
 ## Overview
-Create a model scoreboard that packages benchmark breadth, quality regression alerts, and deployment-readiness summaries.
 
-This project is part of a 50-project portfolio covering data science, AI, LLM, RAG, and product analytics use cases across finance, health, retail, cybersecurity, developer tools, and enterprise workflows.
+Rank candidate models across cost, latency, safety, and task performance for enterprise deployment committees.
 
-## Project Profile
-- Domain: Large-Scale Model Benchmarking
+## Real-world problem
+
+- User: Platform leads and enterprise architecture teams
+- Problem: Teams compare models ad hoc without a shared view of cost, safety, and task-fit tradeoffs.
+- Decision improved: Choose the right model for deployment by balancing benchmark quality against operating constraints.
+- KPI target: Improve model selection speed and reduce deployment rework.
+
+## Why this matters
+
+This repo is positioned as a real product for a real team, not a framework-only demo. The goal is to show how research-backed AI, analytics, or graph systems become deployable workflows with docs, UI, screenshots, and business-facing outputs.
+
+## Project profile
+
+- Domain: AI Procurement and Benchmarking
 - Project type: `llm`
-- Tags: opencompass, benchmarks, llm, evaluation
+- Tags: benchmarking, procurement, llm, enterprise
 
-## Quick Start
+## Workflow
+
+1. Ingest the operational context for the user and case.
+2. Score risk, quality, or opportunity using the project API.
+3. Compare current signals against a business baseline.
+4. Generate a recommendation or operator brief for the next step.
+
+## Quick start
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate
@@ -24,7 +42,8 @@ uvicorn src.app.main:app --host 0.0.0.0 --port 8000 --reload
 
 Open `http://localhost:8000/` to use the interactive application.
 
-## Key Endpoints
+## Key endpoints
+
 - `GET /`
 - `GET /health`
 - `GET /bootstrap`
@@ -34,19 +53,10 @@ Open `http://localhost:8000/` to use the interactive application.
 - `POST /query`
 - `POST /recommend`
 
-## Structure
-```text
-opencompass-model-scoreboard/
-|- configs/
-|- data/
-|- demo/
-|- docs/
-|- scripts/
-|- src/app/
-|- src/app/web/
-|- tests/
-|- .github/workflows/
-|- Dockerfile
-|- docker-compose.yml
-|- Makefile
-```
+## Documentation
+
+- [Architecture](docs/architecture.md)
+- [Evaluation](docs/evaluation.md)
+- [Runbook](docs/runbook.md)
+- [Innovation memo](research/innovation_memo.md)
+- [Upstream audit](research/upstream_audit.md)
